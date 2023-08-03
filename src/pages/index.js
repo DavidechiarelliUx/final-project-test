@@ -1,7 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Navbar from '@/components/navbar'
-import styles from '@/styles/Home.module.scss'
+import Head from 'next/head';
+import Image from 'next/image';
+
+// import components
+import Navbar from '@/components/navbar';
+import Header from '@/components/header';
+
+import styles from '@/styles/Home.module.scss';
 
 
 
@@ -15,6 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar/>
+      <Header/>
      <div className={styles.Home}>Ciao</div>
     </>
   )
