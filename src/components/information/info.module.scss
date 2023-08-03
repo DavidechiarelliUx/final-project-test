@@ -1,0 +1,43 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    flex-direction: row; 
+    width: 100%;
+    height: 537px; 
+    overflow: hidden;  
+    @media (max-width: 768px) {
+        .container {
+            height: 780px;
+        }
+    }
+    
+    .image {
+        z-index: -1;
+        position: absolute;
+        width: 100%;  
+        height: 100%;  
+        object-fit: cover; 
+        filter: brightness(50%);
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    color: aliceblue;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+    }
+}
+
+.footer{
+    background-color: $color-primary;
+    width: 100%;
+    height: 200px;
+}
