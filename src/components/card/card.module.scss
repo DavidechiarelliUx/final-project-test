@@ -1,0 +1,17 @@
+.Card {
+    background-color: $color-secondary;
+    width: 296px;
+    margin-top: 59px;
+    border-radius: 10px;
+}
+.containerButton{
+    @include flexboxCenter;
+    margin-bottom: 10px;
+}
+.button{
+    padding:14px 100px ;
+    background-color: $color-primary;
+    color: $color-secondary;
+    border: transparent;
+    border-radius: 5px;
+}
