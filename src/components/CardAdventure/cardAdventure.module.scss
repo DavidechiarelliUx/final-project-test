@@ -14,19 +14,8 @@
         padding-right: 0px;
     }
 }
-
-  .containerButton {
-    display: flex;
-    justify-content: center; 
-    margin-bottom: 5rem; 
-
-}
-
-  .button{
-    padding:14px 100px ;
-    background-color: $color-primary;
-    color: $color-secondary;
-    border: transparent;
-    border-radius: 5px;
-   
+.title {
+    color:  $color-primary;
+    font-weight: 100;
+    padding-left: 50px;
 }

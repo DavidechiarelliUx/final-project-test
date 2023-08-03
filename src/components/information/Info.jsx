@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Banner from "@/assets/images/Banner.jpeg"
 const Info = () => {
   return (
-    <>
+
     <div className={styles.container}>
           <Image
         src={Banner}
@@ -25,9 +25,7 @@ const Info = () => {
         <h2>Itinerari</h2>
       </div>
     </div>
-    <div className={styles.footer}>
-    </div>
-    </>
+
   );
 };
 
