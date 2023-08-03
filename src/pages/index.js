@@ -4,10 +4,9 @@ import Image from 'next/image';
 // import components
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
-import Card from '@/components/card';
+import CardList from '@/components/cardList';
 
 import styles from '@/styles/Home.module.scss';
-
 
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
       </Head>
       <Navbar/>
       <Header/>
-      <Card/>
+      <CardList/>
     </>
   )
 }
