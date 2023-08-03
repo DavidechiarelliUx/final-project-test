@@ -1,0 +1,36 @@
+@import '../styles/scss/all.scss';
+
+h1 {
+    font-size: $heading1;
+    font-weight: 700; 
+}
+
+h2 {
+    font-size: $subHeading1;
+    font-weight: 600; 
+}
+
+h3 {
+    font-size: $heading2;
+    font-weight: 600;
+}
+
+p.large {
+    font-size: $paragraphLarge;
+    font-weight: 400; 
+}
+
+p.small {
+    font-size: $paragraphSmall;
+    font-weight: 400; 
+}
+
+p.extra-small {
+    font-size: $paragraphExtraSmall;
+    font-weight: 400; 
+}
+
+.display {
+    font-size: 42px;
+    font-weight: 700; 
+}

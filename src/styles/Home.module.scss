@@ -1,0 +1,8 @@
+@import '../styles/scss/all.scss';
+
+.Home{
+    background-color: $color-tertiary;
+    color: $color-primary;
+    @include flexboxCenter();
+}
+
