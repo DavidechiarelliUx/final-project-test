@@ -6,7 +6,11 @@ import Navbar from '@/components/navbar';
 import Header from '@/components/header';
 import CardList from '@/components/cardList';
 import Info from '@/components/information';
+import Footer from '@/components/footer';
+import CardAdventure from '@/components/CardAdventure';
+
 import styles from '@/styles/Home.module.scss';
+
 
 
 export default function Home() {
@@ -22,6 +26,8 @@ export default function Home() {
       <Header/>
       <CardList/>
       <Info/>
+      <CardAdventure/>
+      <Footer/>
     </>
   )
 }
