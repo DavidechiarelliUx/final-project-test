@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
 import CardList from '@/components/cardList';
-
+import Info from '@/components/information';
 import styles from '@/styles/Home.module.scss';
 
 
@@ -21,6 +21,7 @@ export default function Home() {
       <Navbar/>
       <Header/>
       <CardList/>
+      <Info/>
     </>
   )
 }
