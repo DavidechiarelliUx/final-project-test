@@ -13,8 +13,8 @@ const Navbar = () => {
             alt="company logo"
             objectFit="cover"
             className={styles.image}
-            width="40"
-            height="40"
+            width="30"
+            height="30"
           />
     </div>
   );
