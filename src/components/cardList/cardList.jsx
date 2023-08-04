@@ -43,7 +43,9 @@ const ViewModes = {
 
 const CardList = () => {
     const [viewMode, setViewMode] = useState(ViewModes.ShowAll);
-    let groupedData;
+    const [selectedPort, setSelectedPort] = useState("");
+
+    let groupedData = {};
     if (viewMode === ViewModes.ShowByPort) {
         groupedData = mockData.reduce((grouped, data) => {
             (grouped[data.departure.Port] = grouped[data.departure.Port] || []).push(data);
@@ -55,13 +57,11 @@ const CardList = () => {
         setViewMode(e.target.value);
     };
 
-    const [selectedPort, setSelectedPort] = useState("");
-
     const handlePortSelected = (port) => {
         setSelectedPort(port);
     };
 
-    return(
+    return (
         <>
             <div className={styles.selectContainer}>
                 <div className={styles.container}>
@@ -70,29 +70,42 @@ const CardList = () => {
                         <option value={ViewModes.ShowByPort}>Mostra per porto di partenza</option>
                     </select>
                 </div>
-                <div className={styles.container}>
-                    <FilterPort ports={Object.keys(groupedData)} onPortSelected={handlePortSelected} />
-                </div>
+                {viewMode === ViewModes.ShowByPort && (
+                    <div className={styles.container}>
+                        <FilterPort ports={Object.keys(groupedData)} onPortSelected={handlePortSelected} />
+                    </div>
+                )}
             </div>
             <div className={styles.cardList}>
-                {viewMode === ViewModes.ShowByPort ? Object.keys(groupedData).map(port => (
-                    <div key={port} className={styles.portGroup}>
-                        <h2 className={styles.portTitle}>{port}</h2>
-                        <div className={styles.cardList}>
-                            {groupedData[port].map(cardData => (
-                                <Card key={cardData.id} data={cardData} />
-                            ))}
+                {viewMode === ViewModes.ShowByPort ? (
+                    selectedPort ? (
+                        <div key={selectedPort} className={styles.portGroup}>
+                            <h2 className={styles.portTitle}>{selectedPort}</h2>
+                            <div className={styles.cardList}>
+                                {groupedData[selectedPort].map(cardData => (
+                                    <Card key={cardData.id} data={cardData} />
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                )) : 
+                    ) : 
+                    Object.keys(groupedData).map(port => (
+                        <div key={port} className={styles.portGroup}>
+                            <h2 className={styles.portTitle}>{port}</h2>
+                            <div className={styles.cardList}>
+                                {groupedData[port].map(cardData => (
+                                    <Card key={cardData.id} data={cardData} />
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                ) : 
                 mockData.map(cardData => (
                     <Card key={cardData.id} data={cardData} />
                 ))}
             </div>
         </>
-    );    
-    
-}
+    );
+}    
 
 export default CardList;
 
