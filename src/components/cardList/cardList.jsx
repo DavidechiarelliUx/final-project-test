@@ -48,7 +48,6 @@ const CardList = () => {
             (grouped[data.departure.Port] = grouped[data.departure.Port] || []).push(data);
             return grouped;
         }, {});
-        console.log(groupedData);
     }
     
     const handleViewModeChange = (e) =>{
@@ -57,15 +56,28 @@ const CardList = () => {
 
     return(
         <>
-        <div className={styles.container}>
-            <select className={styles.ShowBox} onChange={handleViewModeChange}>
-                <option value={ViewModes.ShowAll}>Mostra tutti</option>
-                <option value={ViewModes.ShowByPort}>Mostra per porto di partenza</option>
-            </select>
-        </div>
-        <div> ciao </div>
+            <div className={styles.container}>
+                <select className={styles.ShowBox} onChange={handleViewModeChange}>
+                    <option value={ViewModes.ShowAll}>Mostra tutti</option>
+                    <option value={ViewModes.ShowByPort}>Mostra per porto di partenza</option>
+                </select>
+            </div>
+            <div className={styles.cardList}>
+                {viewMode === ViewModes.ShowByPort ? Object.keys(groupedData).map(port => (
+                    <div key={port} className={styles.cardList}>
+                        <h2>{port}</h2>
+                        {groupedData[port].map(cardData => (
+                            <Card key={cardData.id} data={cardData} />
+                        ))}
+                    </div>
+                )) : 
+                mockData.map(cardData => (
+                    <Card key={cardData.id} data={cardData} />
+                ))}
+                </div>
+
         </>
-    );
+    );    
 }
 
 export default CardList;
