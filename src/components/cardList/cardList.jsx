@@ -44,6 +44,7 @@ const ViewModes = {
 const CardList = () => {
     const [viewMode, setViewMode] = useState(ViewModes.ShowAll);
     const [selectedPort, setSelectedPort] = useState("");
+    const [numCardsToShow, setNumCardsToShow] = useState(8);
 
     let groupedData = {};
     if (viewMode === ViewModes.ShowByPort) {
@@ -59,6 +60,10 @@ const CardList = () => {
 
     const handlePortSelected = (port) => {
         setSelectedPort(port);
+    };
+
+    const handleShowMoreClick = () => {
+        setNumCardsToShow(numCardsToShow + 8);  
     };
 
     return (
@@ -99,14 +104,17 @@ const CardList = () => {
                         </div>
                     ))
                 ) : 
-                mockData.map(cardData => (
+                mockData.slice(0, numCardsToShow).map(cardData => (
                     <Card key={cardData.id} data={cardData} />
                 ))}
             </div>
+            {viewMode === ViewModes.ShowAll && (
+                <div className={styles.containerButton}>
+                    <button className={styles.button} onClick={handleShowMoreClick}>Mostra Altro</button>
+                </div>
+            )}
         </>
     );
-}    
+}
 
 export default CardList;
-
-

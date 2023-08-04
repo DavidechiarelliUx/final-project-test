@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Info.module.scss';
+import styles from './info.module.scss';
 import Image from 'next/image';
 
 import Banner from "@/assets/images/Banner.jpeg"
