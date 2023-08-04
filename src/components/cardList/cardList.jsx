@@ -63,13 +63,17 @@ const CardList = () => {
 
     return(
         <>
-            <div className={styles.container}>
-                <select className={styles.ShowBox} onChange={handleViewModeChange}>
-                    <option value={ViewModes.ShowAll}>Mostra tutti</option>
-                    <option value={ViewModes.ShowByPort}>Mostra per porto di partenza</option>
-                </select>
+            <div className={styles.selectContainer}>
+                <div className={styles.container}>
+                    <select className={styles.ShowBox} onChange={handleViewModeChange}>
+                        <option value={ViewModes.ShowAll}>Mostra tutti</option>
+                        <option value={ViewModes.ShowByPort}>Mostra per porto di partenza</option>
+                    </select>
+                </div>
+                <div className={styles.container}>
+                    <FilterPort ports={Object.keys(groupedData)} onPortSelected={handlePortSelected} />
+                </div>
             </div>
-            {groupedData && <FilterPort ports={Object.keys(groupedData)} onPortSelected={handlePortSelected} />}
             <div className={styles.cardList}>
                 {viewMode === ViewModes.ShowByPort ? Object.keys(groupedData).map(port => (
                     <div key={port} className={styles.portGroup}>
@@ -87,6 +91,7 @@ const CardList = () => {
             </div>
         </>
     );    
+    
 }
 
 export default CardList;

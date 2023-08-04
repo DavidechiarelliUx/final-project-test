@@ -60,3 +60,23 @@
     flex-direction: column;
     width: 100%;
 }
+.selectContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.selectContainer .container {
+    width: 20%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
