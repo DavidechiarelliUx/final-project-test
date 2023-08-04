@@ -33,6 +33,7 @@
 import React, {useState} from "react";
 import Card from "@/components/Card";
 import { mockData } from "@/mocks/mock";
+import FilterPort from "../filterPort";
 import styles from "./cardList.module.scss";
 
 const ViewModes = {
@@ -50,8 +51,14 @@ const CardList = () => {
         }, {});
     }
     
-    const handleViewModeChange = (e) =>{
+    const handleViewModeChange = (e) => {
         setViewMode(e.target.value);
+    };
+
+    const [selectedPort, setSelectedPort] = useState("");
+
+    const handlePortSelected = (port) => {
+        setSelectedPort(port);
     };
 
     return(
@@ -62,6 +69,7 @@ const CardList = () => {
                     <option value={ViewModes.ShowByPort}>Mostra per porto di partenza</option>
                 </select>
             </div>
+            {groupedData && <FilterPort ports={Object.keys(groupedData)} onPortSelected={handlePortSelected} />}
             <div className={styles.cardList}>
                 {viewMode === ViewModes.ShowByPort ? Object.keys(groupedData).map(port => (
                     <div key={port} className={styles.portGroup}>
@@ -82,4 +90,5 @@ const CardList = () => {
 }
 
 export default CardList;
+
 
