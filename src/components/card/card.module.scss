@@ -4,17 +4,47 @@
     margin-top: 59px;
     border-radius: 10px;
 }
-.TextCard{
-    margin-left: 20px;
+
+.TextCard {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
-.containerButton{
-    @include flexboxCenter;
+
+.containerButton {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
-.button{
-    padding:14px 100px ;
+
+.reservationSection {
+    grid-column: 1 / 3;
+}
+
+.button {
+    padding:14px 100px;
     background-color: $color-primary;
     color: $color-secondary;
     border: transparent;
     border-radius: 5px;
+}
+
+.price {
+    font-weight: bold;
+    grid-column: 1 / 3;
+}
+
+.title {
+    grid-column: 1 / 3;
+}
+
+.tertiaryColor {
+    color: $color-tertiary;
+}
+
+.marginTop {
+    margin-top: -15px; 
 }
