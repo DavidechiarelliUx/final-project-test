@@ -47,3 +47,17 @@
      }
 
 }
+
+.portTitle {
+    width: 100%;
+    background-color: $color-primary;  
+    color: $color-secondary;
+    margin-top: 2rem;  
+    padding: 1.5rem;
+}
+
+.portGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

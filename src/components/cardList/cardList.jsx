@@ -64,18 +64,19 @@ const CardList = () => {
             </div>
             <div className={styles.cardList}>
                 {viewMode === ViewModes.ShowByPort ? Object.keys(groupedData).map(port => (
-                    <div key={port} className={styles.cardList}>
-                        <h2>{port}</h2>
-                        {groupedData[port].map(cardData => (
-                            <Card key={cardData.id} data={cardData} />
-                        ))}
+                    <div key={port} className={styles.portGroup}>
+                        <h2 className={styles.portTitle}>{port}</h2>
+                        <div className={styles.cardList}>
+                            {groupedData[port].map(cardData => (
+                                <Card key={cardData.id} data={cardData} />
+                            ))}
+                        </div>
                     </div>
                 )) : 
                 mockData.map(cardData => (
                     <Card key={cardData.id} data={cardData} />
                 ))}
-                </div>
-
+            </div>
         </>
     );    
 }
