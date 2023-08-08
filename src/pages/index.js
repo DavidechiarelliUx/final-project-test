@@ -4,9 +4,9 @@ import Image from 'next/image';
 // import components
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
-import CardList from '@/components/cardList';
+import CardList from '@/components/CardList';
 import Info from '@/components/information';
-import Footer from '@/components/footer';
+import Footer from '@/components/Footer';
 import CardAdventure from '@/components/CardAdventure';
 
 import styles from '@/styles/Home.module.scss';
