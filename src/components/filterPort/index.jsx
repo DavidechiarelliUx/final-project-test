@@ -1,3 +1,3 @@
-import FilterPort from "./filterPort";
+import FilterPort from "./FilterPort";
 
 export default FilterPort;
