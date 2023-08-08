@@ -4,10 +4,10 @@ import Image from 'next/image';
 // import components
 import Navbar from '@/components/navbar';
 import Header from '@/components/header';
-import CardList from '@/components/cardList/CardList';
+import CardList from '@/components/CardList/CardList';
 import Info from '@/components/information';
-import Footer from '@/components/footer/Footer';
-import CardAdventure from '@/components/CardAdventure';
+import Footer from '@/components/Footer/Footer';
+import CardAdventure from '@/components/CardAdventure/CardAdventure';
 
 
 import styles from '@/styles/Home.module.scss';
