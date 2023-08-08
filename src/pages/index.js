@@ -9,11 +9,6 @@ import CardList from "@/components/CardList";
 import Info from '@/components/information';
 import Footer from '@/components/Footer';
 import CardAdventure from '@/components/CardAdventure';
-import CardList from '@/components/CardList/CardList';
-import Info from '@/components/information';
-import Footer from '@/components/Footer/Footer';
-
-
 
 import styles from '@/styles/Home.module.scss';
 
