@@ -28,10 +28,10 @@ const Card = ({ data }) => {
                 <p className={styles.marginTop}>{boatType}</p>
                 <h3 className={styles.marginTop}>{Port}</h3>
                 <p className={styles.marginTop}>{numberOfDays} giorni</p>
-                <p className={styles.marginTop}>{new Date(departureDate).toLocaleDateString()}</p>
+                {/* <p className={styles.marginTop}>{new Date(departureDate).toLocaleDateString()}</p>
                 <p className={styles.marginTop}>{new Date(arrivalDate).toLocaleDateString()}</p>
                 <p className={`${styles.tertiaryColor} ${styles.marginTop}`}>{new Date(departureDate).toLocaleTimeString()}</p>
-                <p className={`${styles.tertiaryColor} ${styles.marginTop}`}>{new Date(arrivalDate).toLocaleTimeString()}</p>
+                <p className={`${styles.tertiaryColor} ${styles.marginTop}`}>{new Date(arrivalDate).toLocaleTimeString()}</p> */}
                 <div className={styles.reservationSection}>
                     <p className={styles.marginTop}>{reservations} {reservationsType}</p>
                     <p className={`${styles.tertiaryColor} ${styles.marginTop}`}>Disponibilità: {reservationsAvailable}</p>
