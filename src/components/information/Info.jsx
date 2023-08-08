@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './info.module.scss';
 import Image from 'next/image';
 
-import Banner from "@/assets/images/Banner.jpeg"
+import Banner from "../../assets/images/banner.jpeg"
 const Info = () => {
   return (
 

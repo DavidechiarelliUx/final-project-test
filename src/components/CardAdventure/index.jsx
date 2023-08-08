@@ -1,3 +1,3 @@
-import AdventureSection from "./cardAdventure";
+import AdventureSection from "./CardAdventure";
 
 export default AdventureSection;
